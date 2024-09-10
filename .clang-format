@@ -1,9 +1,14 @@
----
 BasedOnStyle: Google
----
-Language: Cpp
-# Force pointers to the type for C++.
-DerivePointerAlignment: false
-PointerAlignment: Left
-ReferenceAlignment: Left
-AlignOperands: true
+
+IndentWidth: 2
+
+AccessModifierOffset: -1
+AllowShortBlocksOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+BreakConstructorInitializers: BeforeComma
+SortIncludes: false
+ColumnLimit: 120
+DerivePointerAlignment: true
+KeepEmptyLinesAtTheStartOfBlocks: true
