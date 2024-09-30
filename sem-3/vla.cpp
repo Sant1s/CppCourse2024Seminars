@@ -58,11 +58,16 @@ void example_3() {
   /*
     Кто может пояснить почему?
   */
-  const int n2 = 5;
 
-  int arr2[n2] = {1, 2, 3, 4, 5};
+  int x;
 
-  for (int i = 0; i < n; ++i) {
+  std::cin >> x;
+
+  const int n2 = x;
+
+  int arr2[n2] = {1, 2, 3, 4, 5, 6};
+
+  for (int i = 0; i < n2; ++i) {
     std::cout << arr[i] << " ";
   }
 
@@ -81,8 +86,8 @@ int main() {
     использование VLA не разрешено стандартом, и их поддержка считается нарушением правил языка.
    */
 
-  example_1();
-  example_2();
+  // example_1();
+  // example_2();
   example_3();
   return 0;
 }

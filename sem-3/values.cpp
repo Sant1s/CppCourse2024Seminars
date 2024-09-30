@@ -13,18 +13,18 @@ int main() {
             и оно не может быть использовано как lvalue.
   */
 
-  // Примеры lvalue
-  int x = 10;  // x — это lvalue
-  std::cout << "Это x: " << x << std::endl;
+  // // Примеры lvalue
+  // int x = 10;  // x — это lvalue
+  // std::cout << "Это x: " << x << std::endl;
 
-  x = 20;  // x можно присваивать новое значение
-  std::cout << "Это тот же x: " << x << std::endl;
+  // x = 20 + 1;  // x можно присваивать новое значение
+  // std::cout << "Это тот же x: " << x << std::endl;
 
-  int* ptr = &x;  // Мы можем взять адрес lvalue
-  std::cout << "Это адрес x: " << x << std::endl;
+  // int* ptr = &x;  // Мы можем взять адрес lvalue
+  // std::cout << "Это адрес x: " << ptr << std::endl;
 
   // Примеры rvalue
-  int y = 5 + 10;  // Выражение (5 + 10) — это rvalue
+  int x = 5 + 10;  // Выражение (5 + 10) — это rvalue
   int z = 30;      // 30 — это rvalue
 
   // А вот так уже нельзя. Хотя это и логично, что нельзя
