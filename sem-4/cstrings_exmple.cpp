@@ -15,6 +15,7 @@ void sortStrings(char arr[][20], int n) {
 }
 
 int main() {
+  /*
   const char* str1 = "Hello";
   char str2[20];
 
@@ -29,15 +30,16 @@ int main() {
   std::cout << "Length of String 1: " << std::strlen(str1) << std::endl;
 
   return 0;
+  */
 
   // Безопасное копирование строки
   /*
-    const char* source = "This is a long string";
-    char destination[10];
+    const char* source = "This is a long string as fuck";
+    char destination[std::strlen(source)+1];
 
     // Копируем только первые 9 символов (оставляем место для нуля)
-    std::strncpy(destination, source, 9);
-    destination[9] = '\0';  // Не забываем явно указать нуль-терминатор
+    std::strncpy(destination, source, std::strlen(source));
+    destination[std::strlen(source)] = '\0';  // Не забываем явно указать нуль-терминатор
 
     std::cout << "Source: " << source << std::endl;
     std::cout << "Destination: " << destination << std::endl;
@@ -48,7 +50,7 @@ int main() {
   // Сравнение строк с помощью strcmp
   /*
     const char* str1 = "apple";
-    const char* str2 = "banana";
+    const char* str2 = "appledfivundfpivundfpi";
 
     int result = std::strcmp(str1, str2);
 
@@ -82,7 +84,7 @@ int main() {
     const char* str2 = "World!";
 
     // Конкатенируем только 3 символа из str2
-    std::strncat(str1, str2, 3);
+    std::strncat(str1, str2, std::strlen(str2));
 
     std::cout << "Result: " << str1 << std::endl;
 
@@ -94,7 +96,7 @@ int main() {
     const char* str = "Hello, World!";
 
     // Вычисляем длину строки
-    std::size_t length = std::strlen(str);
+    size_t length = std::strlen(str);
 
     std::cout << "Length of the string is: " << length << std::endl;
 
@@ -104,7 +106,7 @@ int main() {
   // Поиск подстроки с помощью strstr
   /*
     const char* str = "Hello, World!";
-    const char* substr = "World";
+    const char* substr = "fuck";
 
     // Ищем подстроку в строке
     const char* result = std::strstr(str, substr);
@@ -112,7 +114,7 @@ int main() {
     if (result) {
       std::cout << "Substring found: " << result << std::endl;
     } else {
-      std::cout << "Substring not found." << std::endl;
+      std::cout << "Substring not found." << result << std::endl;
     }
 
     return 0;
@@ -120,7 +122,7 @@ int main() {
 
   // Копирование части строки с помощью memcpy
   /*
-    const char* source = "Hello, memcpy!";
+    const int source[4] = {1, 2, 3, 4};
     char destination[20];
 
     // Копируем первые 5 символов
@@ -134,34 +136,34 @@ int main() {
   */
 
   // Пример работы с strtok — разбиение строки на токены
-  /*
-    char str[] = "Hello, how are you?";
-    const char* delimiters = " ,?";
 
-    // Получаем первый токен
-    char* token = std::strtok(str, delimiters);
+  char str[] = "Hello, how are you?";
+  const char* delimiters = " ,?";
 
-    // Печатаем все токены
-    while (token != nullptr) {
-      std::cout << "Token: " << token << std::endl;
-      token = std::strtok(nullptr, delimiters);
-    }
+  // Получаем первый токен
+  char* token = std::strtok(str, delimiters);
+  std::cout << "Token: " << token << std::endl;
 
-    return 0;
-  */
+  str[5] = 'r';
+
+  // Печатаем все токены
+  while (token != nullptr) {
+    std::cout << "Token: " << token << std::endl;
+    token = std::strtok(nullptr, delimiters);
+  }
+
+  return 0;
 
   // Использование strcmp для сортировки строк
-  /*
-    char strings[5][20] = {"banana", "apple", "grape", "cherry", "orange"};
+  // char strings[5][20] = {"banana", "apple", "grape", "cherry", "orange"};
 
-    int n = 5;
-    sortStrings(strings, n);
+  // int n = 5;
+  // sortStrings(strings, n);
 
-    std::cout << "Sorted strings:" << std::endl;
-    for (int i = 0; i < n; i++) {
-      std::cout << strings[i] << std::endl;
-    }
+  // std::cout << "Sorted strings:" << std::endl;
+  // for (int i = 0; i < n; i++) {
+  //   std::cout << strings[i] << std::endl;
+  // }
 
-    return 0;
-  */
+  // return 0;
 }
